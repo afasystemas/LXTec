@@ -1,0 +1,49 @@
+.register{
+    margin-top: 10px;
+}
+.fa-trash{
+    color: red;
+}
+.itens{
+    display: inline;
+}
+.fa-eye{
+    color: #17a2b8;
+}
+.toast-mgs{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: none;
+}
+.table-list-itens{
+    display: none;
+}
+#itens-select{
+    display: none;
+}
+
+#itens-select{
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+.itens-data-search{
+    display: block;
+    cursor: pointer;
+}
+
+.itens-data-search:hover{
+    background-color: #17a2b8;
+}
+.item-selected-list{
+    display: inline-block;
+    margin: 2px;
+    border-radius: 1px;
+    border-color: #ced4da;
+    text-align: right;
+}
+.list-itens{
+    display: inline-block;
+}

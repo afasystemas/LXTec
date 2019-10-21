@@ -1,0 +1,35 @@
+iframe, .iframe-main{
+    border: none!important;
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+a, .dropdown-item, .option-menu , .nav-item{
+    cursor: default;
+}
+
+.iframe-main{
+    padding-top: 20px;
+}
+
+.toast-mgs{
+    margin-top: 160px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    display: none;
+}
+
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+/*@media only screen and (max-width: 770px) {*/
+    /*iframe{*/
+        /*border: none;*/
+    /*}*/
+/*}*/
+
+

@@ -1,0 +1,10 @@
+{
+  "require": {
+    "doctrine/orm": "^2.5",
+    "doctrine/dbal": "^2.5",
+    "symfony/yaml": "^3.2"
+  },
+  "autoload": {
+    "psr-0": {"": "src/"}
+  }
+}

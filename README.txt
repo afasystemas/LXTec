@@ -14,3 +14,4 @@
     sudo apt install composer
     composer install
 10- para criar o database execute o comando "php vendor/bin/doctrine orm:schema-tool:create"
+11 - utilizar o "npm install" para atualizar as dependencias

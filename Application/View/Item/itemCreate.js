@@ -35,14 +35,14 @@ $(document).ready(function () {
     });
 
 
-    // $.ajax('http://localhost/LXTec/Application/Controller/Item/item_list.php', {
-    //     type: 'GET',
-    //     success: function (data) {
-    //         var objs =JSON.parse(data);
-    //         addItensSelect(objs);
-    //
-    //     }
-    // });
+    $.ajax('http://localhost/LXTec/Application/Controller/Item/item_list.php', {
+        type: 'GET',
+        success: function (data) {
+            var objs =JSON.parse(data);
+            addItensSelect(objs);
+
+        }
+    });
 
     $('#search-itens').keyup(function(){
         // console.log($(this).val().length >= 3);

@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="quantidadeItem" class="col-form-label">Quantidade</label>
-                        <input id="quantidadeItem" type="number" class="form-control" placeholder="Valor">
+                        <input id="valorItem" type="number" class="form-control" placeholder="Valor">
                     </div>
                     <div class="form-group">
                         <label for="valorItem" class="col-form-label">Valor</label>

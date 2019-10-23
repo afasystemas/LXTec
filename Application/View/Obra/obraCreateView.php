@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/LXTec/node_modules/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <script src="obraCreate.js"></script>
+    <script src="../utils.js"></script>
     <link rel="stylesheet" href="obra.css">
 
 </head>
@@ -49,12 +50,14 @@
                         <div id="itens-select"></div>
                     </div>
 
-                    <div class="form-group table-list-itens" >
+                    <div class="form-group table-list-itens" id="table-list-itens">
                         <table class="table">
                             <thead>
+                                <th></th>
                                 <th>Item</th>
                                 <th>Quantidade</th>
                                 <th>Excluir</th>
+                                <th>Adicionar</th>
                             </thead>
                             <tbody id="list-itens-selected">
                             </tbody>

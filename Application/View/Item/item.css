@@ -47,3 +47,7 @@
 .list-itens{
     display: inline-block;
 }
+
+.modal-delet{
+    display: none;
+}

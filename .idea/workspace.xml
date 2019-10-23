@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc173419-3036-4373-a773-00809abf4543" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Application/View/Item/itemList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Application/Controller/Item/item_delete.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Application/Controller/Item/item_findByName.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Application/View/utils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/arrow-itens.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Application/Controller/Item/create_item.php" afterPath="$PROJECT_DIR$/Application/Controller/Item/create_item.php" />
+      <change beforePath="$PROJECT_DIR$/Application/Controller/Item/item_list.php" afterPath="$PROJECT_DIR$/Application/Controller/Item/item_list.php" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Item/item.css" afterPath="$PROJECT_DIR$/Application/View/Item/item.css" />
       <change beforePath="$PROJECT_DIR$/Application/View/Item/itemCreate.js" afterPath="$PROJECT_DIR$/Application/View/Item/itemCreate.js" />
-      <change beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Item/itemCreateView.php" afterPath="$PROJECT_DIR$/Application/View/Item/itemCreateView.php" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Item/itemList.js" afterPath="$PROJECT_DIR$/Application/View/Item/itemList.js" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Item/itemListView.php" afterPath="$PROJECT_DIR$/Application/View/Item/itemListView.php" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Obra/obra.js" afterPath="$PROJECT_DIR$/Application/View/Obra/obra.js" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Obra/obraCreate.js" afterPath="$PROJECT_DIR$/Application/View/Obra/obraCreate.js" />
+      <change beforePath="$PROJECT_DIR$/Application/View/Obra/obraCreateView.php" afterPath="$PROJECT_DIR$/Application/View/Obra/obraCreateView.php" />
+      <change beforePath="$PROJECT_DIR$/Application/View/index.css" afterPath="$PROJECT_DIR$/Application/View/index.css" />
+      <change beforePath="$PROJECT_DIR$/Application/View/index.php" afterPath="$PROJECT_DIR$/Application/View/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,77 +32,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="itemCreate.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Item/itemCreate.js">
+      <file leaf-file-name="obraCreate.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraCreate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="875">
+              <caret line="188" column="38" lean-forward="false" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+              <folding>
+                <element signature="n#!!block;n#deletItem#0" expanded="false" />
+                <marker date="1571798699078" expanded="true" signature="2972:2998" ph="..." />
+                <marker date="1571798699078" expanded="true" signature="4149:4161" ph="..." />
+                <marker date="1571798699078" expanded="true" signature="4207:4219" ph="..." />
+                <marker date="1571798699078" expanded="true" signature="4271:4283" ph="..." />
+                <marker date="1571798699078" expanded="true" signature="4334:4346" ph="..." />
+                <marker date="1571798699078" expanded="true" signature="5191:5217" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/utils.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="44" selection-end-column="7" />
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="itemList.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/View/Item/itemList.js">
+      <file leaf-file-name="obraCreateView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraCreateView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="53" column="28" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+            <state relative-caret-position="186">
+              <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obraListView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraListView.php">
+      <file leaf-file-name="item_findByName.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Controller/Item/item_findByName.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="596">
+              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
-                <marker date="1571697487660" expanded="true" signature="1844:2363" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="1911:2363" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="1944:2329" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="1977:2294" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="2517:3531" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="2808:3499" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="2848:3463" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="2892:3422" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="2937:3377" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="3155:3156" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="3155:3327" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="3707:3708" ph="..." />
-                <marker date="1571697487660" expanded="true" signature="3707:3731" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Controller/Item/item_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-              <folding>
-                <marker date="1571613590418" expanded="true" signature="208:243" ph="SELECT * FRO... obra" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="itemListView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/View/Item/itemListView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
-              <folding>
-                <marker date="1571696537133" expanded="true" signature="2158:2611" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="2191:2577" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="2224:2542" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="2765:3788" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="3065:3756" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="3105:3720" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="3149:3679" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="3194:3634" ph="..." />
-                <marker date="1571696537133" expanded="true" signature="3412:3584" ph="..." />
+                <marker date="1571788786533" expanded="true" signature="319:361" ph="SELECT * FRO... item" />
+                <marker date="1571788786533" expanded="true" signature="319:362" ph="SELECT * FRO... item" />
+                <marker date="1571788786533" expanded="true" signature="319:365" ph="SELECT * FRO... item" />
+                <marker date="1571788786533" expanded="true" signature="319:374" ph="SELECT * FRO... item" />
+                <marker date="1571788786533" expanded="true" signature="319:375" ph="SELECT * FRO... item" />
+                <marker date="1571788786533" expanded="true" signature="319:377" ph="SELECT * FRO... item" />
               </folding>
             </state>
           </provider>
@@ -118,8 +110,17 @@
       <find>itens-selected</find>
       <find>empt</find>
       <find>$obras</find>
-      <find>Obra</find>
       <find>obra</find>
+      <find>Obra</find>
+      <find>find(</find>
+      <find>find</find>
+      <find>json_decode</find>
+      <find>&quot;=&gt;</find>
+      <find>JSON.</find>
+      <find>toast</find>
+      <find>click</find>
+      <find>itensSelecteds</find>
+      <find>\n</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -131,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/createUser.php" />
         <option value="$PROJECT_DIR$/config/cli-config.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Obra.php" />
@@ -160,25 +160,29 @@
         <option value="$PROJECT_DIR$/Application/View/Utils.js" />
         <option value="$PROJECT_DIR$/Application/Controller/ObraList.php" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/Application/View/index.css" />
-        <option value="$PROJECT_DIR$/Application/View/Obra/obra.js" />
-        <option value="$PROJECT_DIR$/Application/Controller/Item/item_list.php" />
-        <option value="$PROJECT_DIR$/Application/View/Obra/obraCreateView.php" />
         <option value="$PROJECT_DIR$/Application/View/Obra/obra.css" />
-        <option value="$PROJECT_DIR$/Application/View/Obra/obraCreate.js" />
         <option value="$PROJECT_DIR$/Application/Controller/ObraCreate.php" />
         <option value="$PROJECT_DIR$/Application/Controller/ObraController.php" />
         <option value="$PROJECT_DIR$/Application/View/Item/ItemCreateView.php" />
-        <option value="$PROJECT_DIR$/Application/View/Item/item.css" />
-        <option value="$PROJECT_DIR$/Application/View/index.php" />
-        <option value="$PROJECT_DIR$/Application/View/index.js" />
-        <option value="$PROJECT_DIR$/Application/View/Item/itemListView.php" />
-        <option value="$PROJECT_DIR$/Application/View/Item/itemCreateView.php" />
         <option value="$PROJECT_DIR$/Application/Controller/Item/creat_item.php" />
         <option value="$PROJECT_DIR$/Application/View/Obra/obraListView.php" />
-        <option value="$PROJECT_DIR$/Application/View/Item/itemCreate.js" />
         <option value="$PROJECT_DIR$/README.txt" />
+        <option value="$PROJECT_DIR$/Application/View/index.js" />
+        <option value="$PROJECT_DIR$/Application/View/Item/item.css" />
+        <option value="$PROJECT_DIR$/Application/Controller/Item/create_item.php" />
+        <option value="$PROJECT_DIR$/Application/Controller/Item/item_delete.php" />
+        <option value="$PROJECT_DIR$/Application/View/Item/itemListView.php" />
+        <option value="$PROJECT_DIR$/Application/Controller/Item/item_list.php" />
         <option value="$PROJECT_DIR$/Application/View/Item/itemList.js" />
+        <option value="$PROJECT_DIR$/Application/View/Obra/obra.js" />
+        <option value="$PROJECT_DIR$/Application/View/Item/itemCreate.js" />
+        <option value="$PROJECT_DIR$/Application/View/index.php" />
+        <option value="$PROJECT_DIR$/Application/View/index.css" />
+        <option value="$PROJECT_DIR$/Application/View/utils.js" />
+        <option value="$PROJECT_DIR$/Application/Controller/Item/item_findByName.php" />
+        <option value="$PROJECT_DIR$/Application/View/Item/itemCreateView.php" />
+        <option value="$PROJECT_DIR$/Application/View/Obra/obraCreateView.php" />
+        <option value="$PROJECT_DIR$/Application/View/Obra/obraCreate.js" />
       </list>
     </option>
   </component>
@@ -231,6 +235,12 @@
             <id />
           </State>
           <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
             <id>PHP</id>
           </State>
           <State>
@@ -239,7 +249,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>PhpUndefinedVariableInspection</id>
+            <id>JSUnresolvedFunction</id>
           </State>
         </selected-state>
       </profile-state>
@@ -272,46 +282,7 @@
             <path>
               <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
               <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Item" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Item" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="LXTec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LXTec" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Obra" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -323,13 +294,14 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documentos/Desenvolvimento_PHP/TestLxtec" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/Application/Controller" />
       <recent name="$PROJECT_DIR$/Application/Model" />
     </key>
@@ -368,12 +340,12 @@
       <workItem from="1571265107276" duration="221000" />
       <workItem from="1571265353031" duration="18075000" />
       <workItem from="1571349408659" duration="72955000" />
-      <workItem from="1571612810641" duration="16718000" />
+      <workItem from="1571612810641" duration="47574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108447000" />
+    <option name="totallyTimeSpent" value="139303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1366" height="770" extended-state="6" />
@@ -412,32 +384,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="e#213#242#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Obra.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/ObraController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -450,6 +396,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1571587587672" expanded="true" signature="46:74" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -465,6 +414,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1571587587672" expanded="true" signature="46:74" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -517,6 +469,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -524,6 +477,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -532,6 +486,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -559,6 +514,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#88#117#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -580,6 +538,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -587,6 +546,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <marker date="1571587587672" expanded="true" signature="46:74" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -595,32 +557,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/ObraList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <marker date="1571600900434" expanded="true" signature="624:645" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -650,24 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/ObraCreate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding>
-            <element signature="e#112#160#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraCreateView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="52" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Controller/ObraController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -684,62 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Item/item.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Model/Item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraCreate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2713">
-          <caret line="12" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="189" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Item/create_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="54" column="69" lean-forward="false" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Item/itemCreateView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/item.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -748,10 +611,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/ObraCreate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="e#112#160#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Model/Item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Item/create_item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraListView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="1134">
+          <caret line="63" column="35" lean-forward="true" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
           <folding>
             <marker date="1571697487660" expanded="true" signature="1844:2363" ph="..." />
             <marker date="1571697487660" expanded="true" signature="1911:2363" ph="..." />
@@ -770,63 +667,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Controller/Item/item_list.php">
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Item/item_delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <marker date="1571613590418" expanded="true" signature="208:243" ph="SELECT * FRO... obra" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/Item/itemListView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+        <state relative-caret-position="216">
+          <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
           <folding>
-            <marker date="1571696537133" expanded="true" signature="2158:2611" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="2191:2577" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="2224:2542" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="2765:3788" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="3065:3756" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="3105:3720" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="3149:3679" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="3194:3634" ph="..." />
-            <marker date="1571696537133" expanded="true" signature="3412:3584" ph="..." />
+            <element signature="e#1301#1350#0#PHP" expanded="false" />
+            <element signature="e#4248#4255#1#HTML" expanded="false" />
+            <marker date="1571781892166" expanded="true" signature="1396:1889" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="1433:1851" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="1470:1812" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2066:2180" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2066:3148" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2386:3112" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2430:3072" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2478:3027" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2527:2978" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="2749:2928" ph="..." />
+            <marker date="1571781892166" expanded="true" signature="3531:3801" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Item/itemCreate.js">
+    <entry file="file://$PROJECT_DIR$/Application/Controller/ObraList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="44" selection-end-column="7" />
+        <state relative-caret-position="648">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <marker date="1571600900434" expanded="true" signature="624:645" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Item/item_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <marker date="1571781943258" expanded="true" signature="472:505" ph="SELECT * FRO... item" />
+            <marker date="1571781943258" expanded="true" signature="472:506" ph="SELECT * FRO... item" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Item/itemList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/View/Obra/obra.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="79" column="10" lean-forward="false" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Item/item.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Item/itemCreateView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="51" column="42" lean-forward="false" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Controller/Item/item_findByName.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <marker date="1571788786533" expanded="true" signature="319:361" ph="SELECT * FRO... item" />
+            <marker date="1571788786533" expanded="true" signature="319:362" ph="SELECT * FRO... item" />
+            <marker date="1571788786533" expanded="true" signature="319:365" ph="SELECT * FRO... item" />
+            <marker date="1571788786533" expanded="true" signature="319:374" ph="SELECT * FRO... item" />
+            <marker date="1571788786533" expanded="true" signature="319:375" ph="SELECT * FRO... item" />
+            <marker date="1571788786533" expanded="true" signature="319:377" ph="SELECT * FRO... item" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Item/itemCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="114" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="61" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
+    <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraCreateView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="186">
+          <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/View/Item/itemList.js">
+    <entry file="file://$PROJECT_DIR$/Application/View/Obra/obraCreate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="53" column="28" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="875">
+          <caret line="188" column="38" lean-forward="false" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!block;n#deletItem#0" expanded="false" />
+            <marker date="1571798699078" expanded="true" signature="2972:2998" ph="..." />
+            <marker date="1571798699078" expanded="true" signature="4149:4161" ph="..." />
+            <marker date="1571798699078" expanded="true" signature="4207:4219" ph="..." />
+            <marker date="1571798699078" expanded="true" signature="4271:4283" ph="..." />
+            <marker date="1571798699078" expanded="true" signature="4334:4346" ph="..." />
+            <marker date="1571798699078" expanded="true" signature="5191:5217" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

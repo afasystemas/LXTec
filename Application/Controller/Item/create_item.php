@@ -3,13 +3,13 @@
 require_once ('../../Model/Item.php');
 require_once ('../../../config/bootstrap.php');
 use Doctrine\Common\Collections\ArrayCollection;
+	header ('Content-type: text/html; charset=UTF-8');
 
-
-$nameObra = $_POST['nome'];
+$nameItem = utf8_decode($_POST['nome']);
 $quantidade = $_POST['qtd'];
 $valorUnitario = $_POST['valorUnit'];
 $item = new Item();
-$item->setNome($nameObra);
+$item->setNome($nameItem);
 $item->setQuantidade($quantidade);
 $item->setValorUnitario($valorUnitario);
 
@@ -24,12 +24,11 @@ $em =  $entityManager->getRepository('Item');
 
 //$item->setSubitem($subItens);
 try{
-    $entityManager->persist($item);
-    $entityManager->flush();
+	$entityManager->persist($item);
+	$entityManager->flush();
 
-    echo json_encode(["success"=> true]);
+    echo json_encode(["success"=> $ite->getNome()]);
 } catch (Exception $erro){
     echo json_encode(["success"=> false]);
 }
-
 

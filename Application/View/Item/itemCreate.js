@@ -19,6 +19,7 @@ $(document).ready(function () {
     // itensSelecteds.push(itenSelct3);
 
     $('#saveItem').click(function () {
+
         $.ajax('http://localhost/LXTec/Application/Controller/Item/create_item.php', {
             type: 'POST',
             data: {
@@ -29,7 +30,7 @@ $(document).ready(function () {
             },
             success: function (data) {
                 console.log(data);
-                cleanDatas();
+                // cleanDatas();
             }
         });
     });
@@ -38,8 +39,8 @@ $(document).ready(function () {
     $.ajax('http://localhost/LXTec/Application/Controller/Item/item_list.php', {
         type: 'GET',
         success: function (data) {
-            var objs =JSON.parse(data);
-            addItensSelect(objs);
+            // var objs =JSON.parse(data);
+            // addItensSelect(objs);
 
         }
     });
@@ -184,7 +185,7 @@ function getItensFromItem(Items) {
 function addItensItem() {
 
     $('#itens-selected').appendTo(
-        '<spa></spa>'
+        '<span></span>'
     );
 
 }

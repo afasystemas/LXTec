@@ -1,22 +1,23 @@
 var listItens= [];
 var itensSelecteds = [];
+
 $(document).ready(function () {
 
-    itenSelct ={
-        id: 1,
-        qtd: 3
-    };
-    itenSelct2 ={
-        id: 5,
-        qtd: 2
-    };
-    itenSelct3 ={
-        id: 4,
-        qtd:8
-    };
-    itensSelecteds.push(itenSelct);
-    itensSelecteds.push(itenSelct2);
-    itensSelecteds.push(itenSelct3);
+    // itenSelct ={
+    //     id: 1,
+    //     qtd: 3
+    // };
+    // itenSelct2 ={
+    //     id: 5,
+    //     qtd: 2
+    // };
+    // itenSelct3 ={
+    //     id: 4,
+    //     qtd:8
+    // };
+    // itensSelecteds.push(itenSelct);
+    // itensSelecteds.push(itenSelct2);
+    // itensSelecteds.push(itenSelct3);
 
     $('#saveObra').click(function () {
         $.ajax('http://localhost/LXTec/Application/Controller/ObraCreate.php', {
@@ -44,48 +45,88 @@ $(document).ready(function () {
     //     }
     // });
 
-    $('#search-itens').keyup(function(){
-        // console.log($(this).val().length >= 3);
-        if($(this).val().length >= 3){
-            var obras = [
-                {"id":"3","nome":"Obra do jao"},
-                {"id":"5","nome":"Obra de Jesus"}];
-            $('#itens-select').empty();
-            addItensSelect(obras);
-            $('#itens-select').show();
+    $('#search-itens').keyup(function(e){
+        var code = e.keyCode || e.which;
+        if(code == 13) { //Enter keycode
+
+            if($(this).val().length >= 3){
+                // var obras = [
+                //     {"id":"3","nome":"Obra do jao"},
+                //     {"id":"5","nome":"Obra de Jesus"}];
+                // $('#itens-select').empty();
+                // addItensSelect(obras);
+                // $('#itens-select').show();
+                requestListItensByName($(this).val());
+            }
+            else{
+                mgsInfo('Informe pelo menos 3 letras');
+            }
         }
 
     });
 
+    $('#table-list-itens').change(function () {
+        console.log('mudou');
+    });
+    // $('#itens-select').show();
 
-    function addItensSelect(list) {
-        var options ='';
-        $.each(list, function (ind,obj) {
-            options += '<span class="itens-data-search" onclick="addItem('+obj.id+',\''+obj.nome+'\')"> '+obj.nome+'</span>'
-        });
-        $('#itens-select').append(options);
 
-    }
+
 
 });
+function addItensSelect(list) {
+    var options ='';
+    $.each(list, function (ind,obj) {
+        options += '<span class="itens-data-search" onclick="addItem('+obj.id+',\''+obj.nome+'\')"> '+obj.nome+'</span>'
+    });
 
-function addItem(id, nomeItem){
-    console.log(id);
-    itensSelecteds.push(id);
+    $('#itens-select').append(options);
+    $('#itens-select').show();
+
+
+}
+
+function requestListItensByName(nameItem) { console.log(nameItem);
+    $.ajax('http://localhost/LXTec/Application/Controller/Item/item_findByName.php', {
+        type: 'GET',
+        data:{
+            nameItem: nameItem
+        },
+        success: function (data) {
+            // console.log(JSON.stringify(data));
+            list = JSON.parse(data);
+            console.log(list);
+            addItensSelect(JSON.parse(data));
+        }
+
+    });
+}
+
+function addItem(idItem, nomeItem){
+    console.log(idItem);
 
     $('#itens-select').hide();
+    var item = {
+        id: idItem,
+        qtd: 0
+    }
+    itensSelecteds.push(item);
+    var arrowItem = itensSelecteds.length;
 
     $('#search-itens').val('');
     $('#list-itens-selected').append(
-        '<tr id="item-'+id+'">' +
-        '   <td>'+nomeItem+'</span>'+
+        '<tr id="item-'+itensSelecteds.length+'" style="border-bottom-color: black">' +
+        '   <td>'+itensSelecteds.length+'</td>'+
+        '   <td>'+nomeItem+'</td>'+
         '   <td>' +
         '       <input placeholder="quantidade" type="number" class="form-control" >' +
         '   </td>   '+
-        '   <td><i class="fa fa-trash" onclick="deletItem('+id+')"></i></td>'+
+        '   <td><i class="fa fa-trash" onclick="deletItem('+idItem+')"></i></td>'+
+        '   <td><i class="fa fa-plus-circle" onclick="addSubItem('+idItem+','+arrowItem+' )"></i></td>'+
         '</tr>'
     );
     $('.table-list-itens').show();
+    $('#itens-select').empty();
 }
 
 function deletItem(id) {
@@ -94,6 +135,60 @@ function deletItem(id) {
     itensSelecteds = itensSelecteds.filter(function(item) {
         return item !== id
     });
+
+    if(listenerListItens()){
+        $('.table-list-itens').hide();
+    }
+}
+
+function addSubItem(idSubIten, index) {
+    if(itensSelecteds[index-1].subitems == undefined){
+        itensSelecteds[index-1].subitems = [];
+    }
+    var item = {
+        id: idSubIten,
+        qtd: 0
+    };
+    itensSelecteds[index-1].subitems.push(item);
+
+    if(itensSelecteds[index-1].subitems.length == 1){
+
+        // console.log($('#item-'+index+' '));
+
+        var subitem =   ' <tr style="border:none ">' +
+            '                <td style="border:none "><img src="../../../assets/arrow-itens.png" style="height: 35px"></td>' +
+            '                <td style="border:none " colspan="4">' +
+            '                  <table class="table subitens" >' +
+            '                      <thead>' +
+            '                          <th>Item</th>' +
+            '                          <th>Quantidade</th>' +
+            '                          <th>Excluir</th>' +
+            '                          <th>Adicionar</th>' +
+            '                      </thead>' +
+            '                      <tbody id="tbody-list-subitens-'+index+'-'+(index+1)+'">' +
+            '                      </tbody>' +
+            '                  </table>' +
+            '                </td' +
+            '            </tr>';
+
+        console.log('#item-'+index);
+        $('#list-itens-selected #item-'+index).after(subitem);
+    }
+
+
+    var trSubItem = '<tr id="item-'+index+'-'+(index+1)+'" style="border-bottom-color: black">' +
+                    '   <td>'+index+'.'+(index+1)+'</td>'+
+                    '   <td>outro subItems</td>'+
+                    '   <td>' +
+                    '       <input placeholder="quantidade" type="number" class="form-control" >' +
+                    '   </td>   '+
+                    '   <td><i class="fa fa-trash" onclick="deletItem('+idSubIten+')"></i></td>'+
+                    '   <td><i class="fa fa-plus-circle" onclick="addSubItem('+idSubIten+',itensSelecteds.length )"></i></td>'+
+                    '</tr>';
+    console.log('#tbody-list-subitens-'+index+'.'+(index+1));
+    $('#tbody-list-subitens-'+index+'-'+(index+1)).append(trSubItem);
+
+
 }
 
 
@@ -179,6 +274,9 @@ function getItensFromObra(obras) {
     $('#exampleModal').modal()
 
 
+}
+function listenerListItens() {
+    return !itensSelecteds.length > 0;
 }
 
 function addItensObra() {

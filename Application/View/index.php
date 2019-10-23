@@ -75,6 +75,9 @@ $usuario = 'André F Alves';
     <!--        <button id="btn-login" class="btn btn-primary">login</button>-->
     </div>
 
+    <div class="toast-mgs">
+        <div class="alert alert-success"><span class="mgs-toast"></span></div>
+    </div>
 
 </body>
 </html>

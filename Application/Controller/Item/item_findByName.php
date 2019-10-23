@@ -3,21 +3,17 @@
 require("../../../config/bootstrap.php");
 include ("../../Model/Item.php");
 	header ('Content-type: text/html; charset=UTF-8');
-//$em = $entityManager->getRepository('Item');
-//$itens = $em->findAll();
-//header("Content-type: text/html;charset=utf-8");
-$conn =$entityManager->getConnection();
-if(isset($_GET['page'])){
-	$vp = (int) $_GET['page'];
-	$page = ($vp - 1)* 5;
-	
-}
-else {
-	$page = 0;
-}
-//$page = (isset($_GET['page']))? ($_GET['page'] - 1)* 5: 0;
 
-$sql = 'SELECT * FROM item limit 5 offset '.$page;
+
+if(!isset($_GET['nameItem'])){
+	 echo 'necessário parametro';
+	die();
+}
+
+//$page = (isset($_GET['page']))? ($_GET['page'] - 1)* 5: 0;
+$nameItem =  "%".$_GET['nameItem']."%";
+$sql = "SELECT * FROM item WHERE LOWER (nome) LIKE '".$nameItem."'";
+	$conn =$entityManager->getConnection();
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 

@@ -25,6 +25,12 @@ a, .dropdown-item, .option-menu , .nav-item{
     padding-right: 0px;
 }
 
+.toast-mgs{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: none;
+}
 
 /*@media only screen and (max-width: 770px) {*/
     /*iframe{*/

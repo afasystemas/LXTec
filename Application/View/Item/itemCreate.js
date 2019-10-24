@@ -2,23 +2,13 @@ var listItens= [];
 var itensSelecteds = [];
 $(document).ready(function () {
 
-    // itenSelct ={
-    //     id: 1,
-    //     qtd: 3
-    // };
-    // itenSelct2 ={
-    //     id: 5,
-    //     qtd: 2
-    // };
-    // itenSelct3 ={
-    //     id: 4,
-    //     qtd:8
-    // };
-    // itensSelecteds.push(itenSelct);
-    // itensSelecteds.push(itenSelct2);
-    // itensSelecteds.push(itenSelct3);
 
     $('#saveItem').click(function () {
+        console.log( {
+            nome: $('#nameItem').val(),
+                qtd: $('#quantidadeItem').val(),
+                valorUnit: $('#valorItem').val(),
+        });
 
         $.ajax('http://localhost/LXTec/Application/Controller/Item/create_item.php', {
             type: 'POST',
@@ -29,8 +19,7 @@ $(document).ready(function () {
                 // itens: itensSelecteds
             },
             success: function (data) {
-                console.log(data);
-                // cleanDatas();
+                cleanDatas();
             }
         });
     });
@@ -101,7 +90,7 @@ function deletItem(id) {
 function cleanDatas() {
     $('#nameItem').val('');
     $('#valorItem').val('');
-    $('#descricaoItem').val('');
+    $('#quantidadeItem').val('');
     saveSuccess('Salvo Com Sucesso!');
 
 }

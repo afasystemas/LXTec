@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 $nameItem = utf8_decode($_POST['nome']);
 $quantidade = $_POST['qtd'];
+echo $quantidade;
 $valorUnitario = $_POST['valorUnit'];
 $item = new Item();
 $item->setNome($nameItem);
@@ -27,7 +28,7 @@ try{
 	$entityManager->persist($item);
 	$entityManager->flush();
 
-    echo json_encode(["success"=> $ite->getNome()]);
+    echo json_encode(["success"=> $item->getNome()]);
 } catch (Exception $erro){
     echo json_encode(["success"=> false]);
 }

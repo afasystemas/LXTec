@@ -1,4 +1,12 @@
 <?php
+	require("../../../config/bootstrap.php");
+	include ("../../Model/Obra.php");
+	include ("../../Model/Item.php");
+ 
+	$em = $entityManager->getRepository('Item');
+	$itens = $em->findAll();
+	
+	
 ?>
 <html>
 <head>
@@ -11,6 +19,10 @@
     <script src="obraCreate.js"></script>
     <script src="../utils.js"></script>
     <link rel="stylesheet" href="obra.css">
+    <script>
+        var listItens = <?= $itens?>
+        
+    </script>
 
 </head>
 
@@ -33,37 +45,52 @@
                         <label for="descricaoObra">Descricao</label>
                         <textarea class="form-control" id="descricaoObra" rows="3"></textarea>
                     </div>
-<!--                    <div class="form-group">-->
+
+                    <div class="form-group">
+                        <label for="itemObra">Item</label>
+                        <select class="custom-select" id="itemObra">
+                            <option selected value="0">Selecione</option>
+                                    <?php
+                                        foreach ($itens as $item){
+                                          echo'<option value="'.$item->getId().'">'.$item->getNome().'</option>';
+                                        }
+                                    ?>
+                        </select>
+                    </div>
+<!--                    -->
+                    <div class="form-group" id="itens-selected-list">
 <!--                        <label for="itens-select">Itens</label>-->
 <!--                        <select class="form-control" id="itens-select">-->
+<!--                                <options value="0">SELECIONE</options>-->
+<!--                            -->
 <!--                        </select>-->
+                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <div class="input-group">-->
+<!--                            <input type="text" id="search-itens" class="form-control" placeholder="Busque os itens">-->
+<!--                            <div class="input-group-append">-->
+<!--                                <button class="btn btn-secondary" type="button">-->
+<!--                                    <i class="fa fa-search"></i>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div id="itens-select"></div>-->
 <!--                    </div>-->
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" id="search-itens" class="form-control" placeholder="Busque os itens">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div id="itens-select"></div>
-                    </div>
-
-                    <div class="form-group table-list-itens" id="table-list-itens">
-                        <table class="table">
-                            <thead>
-                                <th></th>
-                                <th>Item</th>
-                                <th>Quantidade</th>
-                                <th>Excluir</th>
-                                <th>Adicionar</th>
-                            </thead>
-                            <tbody id="list-itens-selected">
-                            </tbody>
-                        </table>
-                    </div>
-
+<!---->
+<!--                    <div class="form-group table-list-itens" id="table-list-itens">-->
+<!--                        <table class="table">-->
+<!--                            <thead>-->
+<!--                                <th></th>-->
+<!--                                <th>Item</th>-->
+<!--                                <th>Quantidade</th>-->
+<!--                                <th>Excluir</th>-->
+<!--                                <th>Adicionar</th>-->
+<!--                            </thead>-->
+<!--                            <tbody id="list-itens-selected">-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!---->
 
 
                     <button type="button" id="saveObra" class="btn btn-primary">Salvar</button>
@@ -75,5 +102,10 @@
     <div class="toast-mgs">
         <div class="alert alert-success"><span class="mgs-toast"></span></div>
     </div>
+
+
+    <div class="modal-itens" id="modal-itens">
+    </div>
+
 </body>
 </html>

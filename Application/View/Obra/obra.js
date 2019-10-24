@@ -1,19 +1,6 @@
 var listItens= [];
 $(document).ready(function () {
 
-   // $('#saveObra').click(function () {
-   //      $.ajax('http://localhost/LXTec/Application/Controller/ObraCreate.php', {
-   //          type: 'POST',
-   //          data: {
-   //              nome: $('#nameObra').val(),
-   //              valor: $('#valorObra').val(),
-   //              descricao: $('#descricaoObra').val(),
-   //          },
-   //          success: function (data) {
-   //              cleanDatas();
-   //          }
-   //      });
-   //  });
 
     $.ajax('http://localhost/LXTec/Application/Controller/ObraList.php', {
         type: 'GET',
@@ -61,13 +48,13 @@ function openModal(idObra) {
     // });
 
 
-    var obras = [
-        {"id":"1","nome":"Condominio blah blah blao","valor":"454.55","descricao":"Reforna de banheiro"},
-        {"id":"2","nome":"teste reques","valor":"23.56","descricao":"blah blah blah"},
-        {"id":"3","nome":"Obra do jao","valor":"123.455","descricao":"Apenas uma parede"},
-        {"id":"4","nome":"minha casa minha divida","valor":"123.65","descricao":"obra realizada no bairro lageado sobre o comando do mestre de obra fuilaninho de tal"},
-        {"id":"5","nome":"Obra de Jesus","valor":"0","descricao":"As Palavras de DEus"}];
-    getItensFromObra(obras);
+    // var obras = [
+    //     {"id":"1","nome":"Condominio blah blah blao","valor":"454.55","descricao":"Reforna de banheiro"},
+    //     {"id":"2","nome":"teste reques","valor":"23.56","descricao":"blah blah blah"},
+    //     {"id":"3","nome":"Obra do jao","valor":"123.455","descricao":"Apenas uma parede"},
+    //     {"id":"4","nome":"minha casa minha divida","valor":"123.65","descricao":"obra realizada no bairro lageado sobre o comando do mestre de obra fuilaninho de tal"},
+    //     {"id":"5","nome":"Obra de Jesus","valor":"0","descricao":"As Palavras de DEus"}];
+    // getItensFromObra(obras);
 
 }
 

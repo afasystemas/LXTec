@@ -29,15 +29,15 @@ class Item
     protected $valorUnitario;
 
 
-    /**
-     * Many Users have many Users.
-     * @ManyToMany(targetEntity="Item", inversedBy="id")
-     * @JoinTable(name="Subitens",
-     *      joinColumns={@JoinColumn(name="item_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="subitem", referencedColumnName="id")}
-     *      )
-     */
-    private $subitem;
+//    /**
+//     * Many Users have many Users.
+//     * @ManyToMany(targetEntity="Item", inversedBy="id")
+//     * @JoinTable(name="Subitens",
+//     *      joinColumns={@JoinColumn(name="item_id", referencedColumnName="id")},
+//     *      inverseJoinColumns={@JoinColumn(name="subitem", referencedColumnName="id")}
+//     *      )
+//     */
+//    private $subitem;
 
 
     public function getId()

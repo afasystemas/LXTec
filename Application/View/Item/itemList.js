@@ -20,14 +20,14 @@ function requestListItens() {
             page: currentPage
         },
         success: function (data) {
-            list =JSON.parse(data);
-            listItens(JSON.parse(data));
+            var list = JSON.parse(data);
+            console.log(list);
         }
 
     });
 }
 
-function listItens(itens) {
+function listItens(itens) { console.log(itens);
 
     $.each(itens,function (ind, obj) {
         var tr = '<tr>' +

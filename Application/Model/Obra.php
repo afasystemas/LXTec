@@ -28,14 +28,16 @@ class Obra
      * @Column(type="string")
      */
     protected $descricao;
-
-    /**
-     * @ManyToMany(targetEntity="Item")
-     * @JoinTable(name="obra_itens",
-     *      joinColumns={@JoinColumn(name="obra_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="item_id", referencedColumnName="id")}
-     *      )
-     **/
+	
+	
+	
+	/**
+	 * @ManyToMany(targetEntity="item")
+	 * @JoinTable(name="obra_itens",
+	 *      joinColumns={@JoinColumn(name="obra_id", referencedColumnName="id")},
+	 *      inverseJoinColumns={@JoinColumn(name="item_id", referencedColumnName="id")}
+	 *      )
+	 **/
     private $itens;
 
     function __construct()

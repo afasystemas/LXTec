@@ -6,8 +6,8 @@ use Doctrine\ORM\Query\ResultSetMapping;
 
 $rsm = new ResultSetMapping();
 
-//$em = $entityManager->getRepository('Obra');
-//$obras = $em->findAll();
+$em = $entityManager->getRepository('Obra');
+$obras = $em->findAll();
 //
 //);
 

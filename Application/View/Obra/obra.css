@@ -34,9 +34,6 @@
     cursor: pointer;
 }
 
-.itens-data-search:hover{
-    background-color: #17a2b8;
-}
 .item-selected-list{
     display: inline-block;
     margin: 2px;

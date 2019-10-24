@@ -26,35 +26,13 @@
                     </div>
                     <div class="form-group">
                         <label for="quantidadeItem" class="col-form-label">Quantidade</label>
-                        <input id="valorItem" type="number" class="form-control" placeholder="Valor">
+                        <input id="quantidadeItem" type="number" class="form-control" placeholder="Quantidade">
                     </div>
                     <div class="form-group">
                         <label for="valorItem" class="col-form-label">Valor</label>
                         <input id="valorItem" type="number" class="form-control" placeholder="Valor">
                     </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" id="search-itens" class="form-control" placeholder="Busque os itens">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div id="itens-select"></div>
-                    </div>
-
-                    <div class="form-group table-list-itens" >
-                        <table class="table">
-                            <thead>
-                                <th>Item</th>
-                                <th>Quantidade</th>
-                                <th>Excluir</th>
-                            </thead>
-                            <tbody id="list-itens-selected">
-                            </tbody>
-                        </table>
-                    </div>
+                    
 
                     <button type="button" id="saveItem" class="btn btn-primary">Salvar</button>
                 </form>

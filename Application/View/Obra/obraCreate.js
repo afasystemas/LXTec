@@ -3,34 +3,21 @@ var itensSelecteds = [];
 
 $(document).ready(function () {
 
-    // itenSelct ={
-    //     id: 1,
-    //     qtd: 3
-    // };
-    // itenSelct2 ={
-    //     id: 5,
-    //     qtd: 2
-    // };
-    // itenSelct3 ={
-    //     id: 4,
-    //     qtd:8
-    // };
-    // itensSelecteds.push(itenSelct);
-    // itensSelecteds.push(itenSelct2);
-    // itensSelecteds.push(itenSelct3);
 
     $('#saveObra').click(function () {
+
         $.ajax('http://localhost/LXTec/Application/Controller/ObraCreate.php', {
             type: 'POST',
             data: {
-                nome: "DEus",
-                valor: 1.45,
-                descricao: "Me ajuda",
+                nome: $('#nameObra').val(),
+                valor: $('#valorObra').val(),
+                descricao: $('#descricaoObra').val(),
                 itens: itensSelecteds
+                // itens: itensSelecteds
             },
             success: function (data) {
-                console.log(data)
-                // cleanDatas();
+                console.log(data);
+                cleanDatas();
             }
         });
     });
@@ -39,11 +26,26 @@ $(document).ready(function () {
     // $.ajax('http://localhost/LXTec/Application/Controller/Item/item_list.php', {
     //     type: 'GET',
     //     success: function (data) {
-    //         var objs =JSON.parse(data);
-    //         addItensSelect(objs);
+    //         console.log(data);
+    //         // var objs = JSON.parse(data);
+    //         // addItensSelect(objs);
     //
     //     }
     // });
+
+    $('#itemObra').change(function(e){
+
+        if($(this).val()!= 0){ console.log('aki');
+            itensSelecteds.push( parseInt($(this).val()));
+            var item = {
+                id: parseInt($(this).val()),
+                nome: $('option:selected').text()
+            };
+            addItensSelect(item);
+            $(this).val(0);
+
+        }
+    });
 
     $('#search-itens').keyup(function(e){
         var code = e.keyCode || e.which;
@@ -74,17 +76,18 @@ $(document).ready(function () {
 
 
 });
-function addItensSelect(list) {
-    var options ='';
-    $.each(list, function (ind,obj) {
-        options += '<span class="itens-data-search" onclick="addItem('+obj.id+',\''+obj.nome+'\')"> '+obj.nome+'</span>'
-    });
+function addItensSelect(item) {
 
-    $('#itens-select').append(options);
-    $('#itens-select').show();
+    var options = '<span class="itens-data-search" id="item-'+item.id+'"> '+item.nome+' <i class="fa fa-close" onclick="deletItem('+item.id+',\''+item.nome+'\')"></i></span>'
 
+    $('#itens-selected-list').append(options);
+    // $('#itens-select').append(options);
+
+console.log(itensSelecteds);
 
 }
+
+
 
 function requestListItensByName(nameItem) { console.log(nameItem);
     $.ajax('http://localhost/LXTec/Application/Controller/Item/item_findByName.php', {
@@ -95,7 +98,7 @@ function requestListItensByName(nameItem) { console.log(nameItem);
         success: function (data) {
             // console.log(JSON.stringify(data));
             list = JSON.parse(data);
-            console.log(list);
+            // console.log(list);
             addItensSelect(JSON.parse(data));
         }
 
@@ -103,15 +106,20 @@ function requestListItensByName(nameItem) { console.log(nameItem);
 }
 
 function addItem(idItem, nomeItem){
-    console.log(idItem);
+    // console.log(idItem);
 
     $('#itens-select').hide();
-    var item = {
-        id: idItem,
-        qtd: 0
-    }
-    itensSelecteds.push(item);
     var arrowItem = itensSelecteds.length;
+
+    var item = {
+        id :  idItem,
+        idView :  arrowItem,
+        nome : nomeItem,
+        qtd : 0,
+        subitens: []
+    };
+
+    itensSelecteds.push(item);
 
     $('#search-itens').val('');
     $('#list-itens-selected').append(
@@ -130,64 +138,82 @@ function addItem(idItem, nomeItem){
 }
 
 function deletItem(id) {
-    console.log(id);
     $('#item-'+id).remove();
-    itensSelecteds = itensSelecteds.filter(function(item) {
-        return item !== id
-    });
-
-    if(listenerListItens()){
-        $('.table-list-itens').hide();
-    }
+    var index = itensSelecteds.indexOf(id);
+    itensSelecteds.splice(index, 1);
+    // if(listenerListItens()){
+    //     $('.table-list-itens').hide();
+    // }
 }
 
-function addSubItem(idSubIten, index) {
-    if(itensSelecteds[index-1].subitems == undefined){
-        itensSelecteds[index-1].subitems = [];
-    }
-    var item = {
-        id: idSubIten,
-        qtd: 0
+function addSubItem(idIten, index) {
+    var objectRequest = {
+        url: 'http://localhost/LXTec/Application/Controller/Item/item_findByName.php',
+        dataRequest:{},
+        dataHeadTable: ['item', 'quantidade'],
+        datacolumnRequest: ['id', 'nome']
     };
-    itensSelecteds[index-1].subitems.push(item);
+    buildModalSelect(objectRequest);
 
-    if(itensSelecteds[index-1].subitems.length == 1){
-
-        // console.log($('#item-'+index+' '));
-
-        var subitem =   ' <tr style="border:none ">' +
-            '                <td style="border:none "><img src="../../../assets/arrow-itens.png" style="height: 35px"></td>' +
-            '                <td style="border:none " colspan="4">' +
-            '                  <table class="table subitens" >' +
-            '                      <thead>' +
-            '                          <th>Item</th>' +
-            '                          <th>Quantidade</th>' +
-            '                          <th>Excluir</th>' +
-            '                          <th>Adicionar</th>' +
-            '                      </thead>' +
-            '                      <tbody id="tbody-list-subitens-'+index+'-'+(index+1)+'">' +
-            '                      </tbody>' +
-            '                  </table>' +
-            '                </td' +
-            '            </tr>';
-
-        console.log('#item-'+index);
-        $('#list-itens-selected #item-'+index).after(subitem);
-    }
-
-
-    var trSubItem = '<tr id="item-'+index+'-'+(index+1)+'" style="border-bottom-color: black">' +
-                    '   <td>'+index+'.'+(index+1)+'</td>'+
-                    '   <td>outro subItems</td>'+
-                    '   <td>' +
-                    '       <input placeholder="quantidade" type="number" class="form-control" >' +
-                    '   </td>   '+
-                    '   <td><i class="fa fa-trash" onclick="deletItem('+idSubIten+')"></i></td>'+
-                    '   <td><i class="fa fa-plus-circle" onclick="addSubItem('+idSubIten+',itensSelecteds.length )"></i></td>'+
-                    '</tr>';
-    console.log('#tbody-list-subitens-'+index+'.'+(index+1));
-    $('#tbody-list-subitens-'+index+'-'+(index+1)).append(trSubItem);
-
+    // console.log(index);
+    // console.log(itensSelecteds);
+    // var idView = 1;
+    // if(itensSelecteds[index-1].subitens != undefined){
+    //     var totalSuiten = itensSelecteds[index-1].subitens.length;
+    //
+    //     for(var i = 0 ; i < totalSuiten; i++){
+    //
+    //     }
+    //
+    // }
+    // var subitem = {
+    //     id :  0,
+    //     idView :  arrowItem +'.'+idView,
+    //     nome : nomeItem,
+    //     qtd : 0,
+    //     subitens: []
+    // };
+    //
+    //
+    // itensSelecteds[index-1].subitens.push(item);
+    //
+    // if(itensSelecteds[index-1].subitems.length == 1){
+    //
+    //     // console.log($('#item-'+index+' '));
+    //
+    //     var subitem =   ' <tr style="border:none ">' +
+    //         '                <td style="border:none "><img src="../../../assets/arrow-itens.png" style="height: 35px"></td>' +
+    //         '                <td style="border:none " colspan="4">' +
+    //         '                  <table class="table subitens" >' +
+    //         '                      <thead>' +
+    //         '                          <th>Item</th>' +
+    //         '                          <th>Quantidade</th>' +
+    //         '                          <th>Excluir</th>' +
+    //         '                          <th>Adicionar</th>' +
+    //         '                      </thead>' +
+    //         '                      <tbody id="tbody-list-subitens-'+index+'-'+(index+1)+'">' +
+    //         '                      </tbody>' +
+    //         '                  </table>' +
+    //         '                </td' +
+    //         '            </tr>';
+    //
+    //     console.log('#item-'+index);
+    //     $('#list-itens-selected #item-'+index).after(subitem);
+    // }
+    //
+    //
+    // var trSubItem = '<tr id="item-'+index+'-'+(index+1)+'" style="border-bottom-color: black">' +
+    //                 '   <td>'+index+'.'+(index+1)+'</td>'+
+    //                 '   <td>outro subItems</td>'+
+    //                 '   <td>' +
+    //                 '       <input placeholder="quantidade" type="number" class="form-control" >' +
+    //                 '   </td>   '+
+    //                 '   <td><i class="fa fa-trash" onclick="deletItem('+idSubIten+')"></i></td>'+
+    //                 '   <td><i class="fa fa-plus-circle" onclick="addSubItem('+idSubIten+',itensSelecteds.length )"></i></td>'+
+    //                 '</tr>';
+    // console.log('#tbody-list-subitens-'+index+'.'+(index+1));
+    // $('#tbody-list-subitens-'+index+'-'+(index+1)).append(trSubItem);
+    // console.log(itensSelecteds);
 
 }
 
@@ -196,6 +222,8 @@ function cleanDatas() {
     $('#nameObra').val('');
     $('#valorObra').val('');
     $('#descricaoObra').val('');
+    itensSelecteds = [];
+    $('#itens-selected-list').empty();
     saveSuccess('Salvo Com Sucesso!');
 
 }
@@ -286,3 +314,6 @@ function addItensObra() {
     );
 
 }
+
+
+

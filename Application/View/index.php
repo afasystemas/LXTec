@@ -71,12 +71,16 @@ $usuario = 'André F Alves';
     </nav>
 
     <div class="container content-iframe">
-        <iframe id="iframe-main" class="iframe-main" src="Obra/obraCreateView.php"></iframe>
+        <iframe id="iframe-main" class="iframe-main" src="Obra/obraListView.php"></iframe>
     <!--        <button id="btn-login" class="btn btn-primary">login</button>-->
     </div>
 
     <div class="toast-mgs">
         <div class="alert alert-success"><span class="mgs-toast"></span></div>
+    </div>
+
+   <div class="toast-mgs-alert">
+        <div class="alert alert-danger"><span id="mgs-toast-alert"></span></div>
     </div>
 
 </body>

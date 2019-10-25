@@ -89,6 +89,7 @@ function deletItem(id) {
 
 function cleanDatas() {
     $('#nameItem').val('');
+    $('#nameItem').focus();
     $('#valorItem').val('');
     $('#quantidadeItem').val('');
     saveSuccess('Salvo Com Sucesso!');

@@ -2,7 +2,15 @@
 	require("../../../config/bootstrap.php");
 	include ("../../Model/Obra.php");
 	include ("../../Model/Item.php");
- 
+	
+	if(isset($_REQUEST['idObra'])){
+        $idObra = $_REQUEST['idObra'];
+	}
+	else{
+			$idObra = '0';
+    }
+	
+	
 	$em = $entityManager->getRepository('Item');
 	$itens = $em->findAll();
 	
@@ -20,8 +28,10 @@
     <script src="../utils.js"></script>
     <link rel="stylesheet" href="obra.css">
     <script>
-        var listItens = <?= $itens?>
-        
+        var listItens = <?= $itens?>;
+        var idObra = <?= $idObra?>;
+
+
     </script>
 
 </head>

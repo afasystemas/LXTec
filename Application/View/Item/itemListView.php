@@ -57,9 +57,6 @@
 		                                        <tr>
 		                                            <td><i class="fa fa-trash"></i></td>
 		                                            <td><i class="fa fa-edit"></i></td>
-		                                            <td>
-		                                                <i class="fa fa-eye itens" onclick="openModal('.$item->getId().')" ></i>
-		                                            </td>
 		                                        </tr>
 		                                    </tbody>
 		                                </table>
@@ -67,16 +64,8 @@
 		                          </tr>';
 		        }
 		        echo $tableIni.$tr.$tableFinal;
-	
-		//        foreach ($itens as $item){
-		//
-		//            foreach ($item->getItens() as $item){
-		//
-		//                echo '<p>'.$item->getNome().'</p>';
-		//            }
-		//
-		//        }
-		//        ?>
+
+		        ?>
     </div>
 
 

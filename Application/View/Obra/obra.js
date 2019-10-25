@@ -1,40 +1,85 @@
-var listItens= [];
+var listItens= []
+var obras;
+var obra;
 $(document).ready(function () {
+    obras = [];
+    requestList();
+});
 
-
+function requestList() {
     $.ajax('http://localhost/LXTec/Application/Controller/ObraList.php', {
         type: 'GET',
         success: function (data) {
-            console.log('resultado aki ');
-            console.log(data);
+            obras = JSON.parse(data);
+            obrasToTable(obras);
+        }
+    });
+}
+
+function editObra(idObra) {
+
+    window.location.replace('http://localhost/LXTec/Application/View/Obra/obraCreateView.php?idObra='+idObra);
+}
+
+function deleteObra(idObra) {
+
+    obra = obras.find(function (obj) {
+       if(obj.id == idObra) {return obj;}
+    });
+
+    $('#modal-Obra').append('<span>Tem Certeza que deseja excluir a Obra '+obra.nome+'</span>');
+    $('#modalDelet').modal();
+    $('#btn-confirm').click(function () {
+        deleteObraRquest(idObra);
+    });
+}
+
+function deleteObraRquest(idObra) {
+    $.ajax('http://localhost/LXTec/Application/Controller/Obra/ObraDeleteController.php', {
+        type: 'POST',
+        data:{
+            idObra: idObra
+        },
+        success: function (data) {
+            if(data.success){
+                $('#tbody-obras').remove();
+                saveSuccess(' Excluido com Sucesso!')
+                requestList();
+            }
+            else {
+                mgsError("Erro ao deletar!")
+            }
         }
 
     });
+}
 
-    // $('#itens-select').change(function(){
-    //     console.log($(this).val());
-    //
-    // });
-});
+function obrasToTable(obras){
+
+    $.each(obras, function (ind, obj) {
+       $('#tbody-obras').append(
+            '        <tr>'+
+            '          <th scope="row">'+obj.id+'</th>'+
+            '              <td>'+obj.nome+'</td>'+
+            '              <td>'+obj.valor+'</td>'+
+            '              <td>'+obj.descricao+'</td>'+
+            '              <td>'+
+            '                  <table>'+
+            '                      <tbody>'+
+            '                          <tr>'+
+            '                              <td><i class="fa fa-trash" onclick="deleteObra('+obj.id+')"></i></td>'+
+            '                              <td><i class="fa fa-edit" onclick="editObra('+obj.id+')"></i></td>'+
+            '                          </tr>'+
+            '                      </tbody>'+
+            '                  </table>'+
+            '              </td>'+
+            '       </tr>');
+    })
+}
 
 
-
-// function cleanDatas() {
-//     $('#nameObra').val('');
-//     $('#valorObra').val('');
-//     $('#descricaoObra').val('');
-//     saveSuccess('Salvo Com Sucesso!');
-//
-// }
-//
-// function saveSuccess(mgs){
-//     $('.mgs-toast').text(mgs);
-//     $('.toast-mgs').show();
-//     setTimeout(function(){
-//         $('.toast-mgs').hide();
-//         }, 2000);
-// }
 function openModal(idObra) {
+
 
     // $.ajax('http://localhost/LXTec/Application/Controller/Item/item_list.php', {
     //     type: 'GET',
@@ -87,9 +132,6 @@ function getItensFromObra(obras) {
                     '      <tr>' +
                     '          <td><i class="fa fa-trash"></i></td>' +
                     '          <td><i class="fa fa-edit"></i></td>' +
-                    // '          <td>' +
-                    // '              <button type="button" class="btn btn-info"><i class="fa fa-eye itens"></i> Itens</button>' +
-                    // '          </td> ' +
                     '      </tr>' +
                     '  </tbody>' +
                     ' <table>    '+
@@ -100,5 +142,6 @@ function getItensFromObra(obras) {
 
     $('#exampleModal').modal()
 
-
 }
+
+

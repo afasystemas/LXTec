@@ -14,6 +14,14 @@ function mgsInfo(mgs){
     }, 2000);
 }
 
+function mgsError(mgs){
+    $('#mgs-toast-alert').text(mgs);
+    $('.toast-mgs-alert').show();
+    setTimeout(function(){
+        $('.toast-mgs-alert').hide();
+    }, 2000);
+}
+
 function getResquest(objectRequest) {
     console.log(objectRequest);
     $.ajax(objectRequest.url, {
@@ -102,9 +110,12 @@ function  generateTable(dataItens) {
 
     });
 
-
-
-
     $('#modal-body-subitens').append(tableReqsult);
+}
+
+function urlRquest(url) {
+    console.log(url);
+    $('body #iframe-main').attr('src',url);
+
 }
 

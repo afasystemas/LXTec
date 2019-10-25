@@ -6,26 +6,33 @@ include ('../Model/Obra.php');
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
-$nameObra = $_POST['nome'];
+$nameObra = utf8_decode($_POST['nome']);
 $valor = $_POST['valor'];
-$descricao = $_POST['descricao'];
-$itensPost = $_POST['itens'];
+$descricao = utf8_decode($_POST['descricao']);
 $obra = new Obra();
 $obra->setNome($nameObra);
 $obra->setValor($valor);
 $obra->setDescricao($descricao);
 //$em =  $entityManager->getRepository('Item');
 
-$itens = new ArrayCollection();
-foreach ($itensPost as $id) {
-    $ite= $entityManager->find('Item',$id);
-    $itens->add($ite);
+if(isset($_POST['descricao'])){
+  $itensPost = $_POST['itens'];
+	$itens = new ArrayCollection();
+	foreach ($itensPost as $id) {
+	    $ite= $entityManager->find('Item',$id);
+	    $itens->add($ite);
+	}
+	$obra->setItens($itens);
 }
 
-$obra->setItens($itens);
-//
-$entityManager->persist($obra);
+
+if($_POST['id'] > 0){
+	$obra->setId($_POST['id']);
+}
+
+$entityManager->merge($obra);
 $entityManager->flush();
+
 
 
 echo "CRIADA OBRA com ID ". $obra->getId();

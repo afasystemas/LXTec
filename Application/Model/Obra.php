@@ -32,7 +32,7 @@ class Obra
 	
 	
 	/**
-	 * @ManyToMany(targetEntity="item")
+	 * @ManyToMany(targetEntity="item",cascade={"all"})
 	 * @JoinTable(name="obra_itens",
 	 *      joinColumns={@JoinColumn(name="obra_id", referencedColumnName="id")},
 	 *      inverseJoinColumns={@JoinColumn(name="item_id", referencedColumnName="id")}
@@ -50,6 +50,12 @@ class Obra
     {
         return $this->id;
     }
+    
+    public function setId($id)
+    {
+        return $this->id = $id;
+    }
+    
 
     public function getNome()
     {
@@ -100,7 +106,4 @@ class Obra
     {
         return $this->created;
     }
-
-
-
 }

@@ -2,6 +2,7 @@
 
 require("../../../config/bootstrap.php");
 include ("../../Model/Item.php");
+	use Doctrine\ORM\Query\ResultSetMapping;
 //	header ('Content-type: text/html; charset=UTF-8');
 	
 	$obraEntity = $entityManager->getRepository('Item');
@@ -17,5 +18,5 @@ include ("../../Model/Item.php");
 		];
 		array_push($objects, $item);
 	}
-	
-	echo json_decode($objects);
+	var_dump($objects);
+	echo json_encode($objects);

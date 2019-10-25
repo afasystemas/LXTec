@@ -12,7 +12,7 @@ a, .dropdown-item, .option-menu , .nav-item{
     padding-top: 20px;
 }
 
-.toast-mgs{
+.toast-mgs, .toast-mgs-alert{
     margin-top: 160px;
     position: absolute;
     left: 50%;

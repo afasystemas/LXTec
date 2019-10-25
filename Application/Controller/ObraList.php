@@ -19,16 +19,15 @@ $obras = $em->findAll();
 //$obras = $resul->getArrayResult();
 
 //$obras = $em->createQueryBuilder();
-echo sizeof($obras);
 
 $list = array();
 foreach ($obras as $obra){
 
     $obra = [
         'id'=> $obra->getId(),
-        'nome'=> $obra->getNome(),
+        'nome'=> utf8_encode($obra->getNome()),
         'valor'=> $obra->getValor(),
-        'descricao'=> $obra->getDescricao()
+        'descricao'=> utf8_encode($obra->getDescricao())
         ];
     array_push($list, $obra);
 

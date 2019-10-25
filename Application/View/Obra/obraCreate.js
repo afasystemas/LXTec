@@ -1,17 +1,23 @@
 var listItens= [];
 var itensSelecteds = [];
 
+
 $(document).ready(function () {
 
+    var obra = {
+        id: 0
+    }
 
     $('#saveObra').click(function () {
+        console.log(obra);
 
         $.ajax('http://localhost/LXTec/Application/Controller/ObraCreate.php', {
             type: 'POST',
             data: {
-                nome: $('#nameObra').val(),
-                valor: $('#valorObra').val(),
-                descricao: $('#descricaoObra').val(),
+                id: obra.id,
+                nome: obra.nome,
+                valor: obra.valor,
+                descricao: obra.descricao,
                 itens: itensSelecteds
                 // itens: itensSelecteds
             },
@@ -21,6 +27,22 @@ $(document).ready(function () {
             }
         });
     });
+
+    if(idObra > 0){
+        $.ajax('http://localhost/LXTec/Application/Controller/Obra_findById.php', {
+            type: 'GET',
+            data:{
+                idObra: idObra
+            },
+            success: function (data) {
+                var data   = JSON.parse(data);
+                obra = data.obra;
+                editObra(data.obra);
+            }
+        });
+
+    }
+
 
 
     // $.ajax('http://localhost/LXTec/Application/Controller/Item/item_list.php', {
@@ -71,11 +93,26 @@ $(document).ready(function () {
         console.log('mudou');
     });
     // $('#itens-select').show();
-
+    $('#nameObra').change(function () {
+        obra.nome = $(this).val();
+    });
+     $('#valorObra').change(function () {
+         obra.valor = $(this).val();
+     });
+     $('#descricaoObra').change(function () {
+         obra.descricao = $(this).val();
+     });
 
 
 
 });
+
+function editObra(obj) {
+    $('#nameObra').val(obj.nome);
+    $('#valorObra').val(obj.valor);
+    $('#descricaoObra').val(obj.descricao);
+}
+
 function addItensSelect(item) {
 
     var options = '<span class="itens-data-search" id="item-'+item.id+'"> '+item.nome+' <i class="fa fa-close" onclick="deletItem('+item.id+',\''+item.nome+'\')"></i></span>'
